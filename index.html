@@ -1,306 +1,246 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Prof. H. Ahsan Habiburrahman — Portofolio</title>
-  <meta name="description" content="Prof. Ahsan Habiburrahman — Professor of Psychology | Speaker, Researcher & Education Consultant. Download CV & contact for bookings.">
-
-  <!-- Open Graph / Social preview -->
-  <meta property="og:title" content="Prof. H. Ahsan Habiburrahman — Portofolio">
-  <meta property="og:description" content="Professor of Psychology | Speaker, Researcher & Education Consultant. Download CV & contact for bookings.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="/assets/og-image.jpg">
-  <meta property="og:url" content="https://profahsanhabib.github.io/AhsanGamtenk">
-
-  <!-- Twitter card -->
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Structured data (Person) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Prof. H. Ahsan Habiburrahman",
-    "jobTitle": "Professor of Psychology",
-    "url": "https://profahsanhabib.github.io/AhsanGamtenk",
-    "sameAs": [
-      "https://www.instagram.com/ahsaaans/"
-    ]
-  }
-  </script>
-
-  <!-- Google Fonts (heading + body) -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prof. H. Ahsan Habiburrahman, S.Psi., Ph.d. - Portofolio</title>
 
   <!-- Tailwind (CDN) -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'brand-blue': '#0b3d91',
-            'brand-gold': '#c9a14b',
-            'brand-green': '#47b71e'
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            serif: ['Merriweather', 'serif']
-          }
-        }
-      }
-    }
-  </script>
-  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- AOS -->
+  <!-- AOS (Animate On Scroll) -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+  <!-- Typed.js (text typing effect) -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <!-- Lottie (optional illustration animation) -->
+  <script src="https://unpkg.com/lottie-web@5.10.1/build/player/lottie.min.js"></script>
+
   <style>
-    /* Small custom styles for quick polish */
-    :root{ --container:1100px }
-    body{ font-family:Inter,system-ui,Arial,Helvetica,sans-serif; }
-    .hero-card{ background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); }
-    .focus-ring:focus{ outline: 3px solid rgba(11,61,145,0.12); outline-offset: 2px; }
-    /* hero floating */
-    @keyframes floatY { 0% { transform: translateY(0);} 50% { transform: translateY(-8px);} 100% { transform: translateY(0);} }
+    :root{
+      --brand-blue: #101093; /* bisa ganti */
+      --brand-gold: #c9a14b; /* ganti sesuai selera */
+      --bg-gradient-end: #47b71e; /* secondary gradient color */
+    }
+
+    /* HERO floating animation */
+    @keyframes floatY { 0% { transform: translateY(0px);} 50% { transform: translateY(-8px);} 100% { transform: translateY(0px);} }
     .hero-float { animation: floatY 6s ease-in-out infinite; }
+
+    /* simple reveal fallback */
+    .reveal { opacity: 0; transform: translateY(20px); transition: all 600ms ease; }
+    .revealed { opacity: 1; transform: translateY(0); }
+
+    /* hover micro interaction for cards */
+    .card { transition: transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s; }
+    .card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 18px 40px rgba(16,24,40,0.12); }
+
+    /* button animation */
+    .cta { transition: transform .15s ease, box-shadow .15s ease; }
+    .cta:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
+    .pulse { animation: pulse 2.2s infinite; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(201,161,75,0.35);} 70% { box-shadow: 0 0 0 12px rgba(201,161,75,0);} 100% { box-shadow: 0 0 0 0 rgba(201,161,75,0);} }
+
+    /* small responsive tweaks */
+    @media (max-width: 640px) { .container { padding-left: 1rem; padding-right: 1rem; } }
+
   </style>
 </head>
-<body class="bg-white text-gray-900 leading-relaxed">
+<body class="bg-white text-gray-900">
 
-  <!-- Accessible header / nav -->
-  <header class="bg-white sticky top-0 z-50 shadow-sm">
-    <div class="max-w-[var(--container)] mx-auto flex items-center justify-between p-4">
-      <a href="#top" class="flex items-center gap-3" aria-label="Ke beranda">
-        <picture>
-          <source srcset="/assets/profile-800.webp 800w, /assets/profile-400.webp 400w" type="image/webp">
-          <img src="/assets/profile-400.jpg" alt="Foto Prof Ahsan" class="w-12 h-12 rounded-full object-cover border-2 border-brand-blue" width="48" height="48" loading="eager">
-        </picture>
-        <div class="leading-tight">
-          <div class="text-lg font-semibold text-brand-blue">Prof. Ahsan</div>
-          <div class="text-xs text-gray-500">Professor of Psychology</div>
+  <!-- NAV (UPDATED: logo + name + mobile menu) -->
+  <header class="bg-white sticky top-0 z-50">
+    <div class="container mx-auto flex items-center justify-between p-3 md:p-4">
+      <!-- LEFT: logo / foto + name -->
+      <a href="#top" class="flex items-center gap-3 shrink-0">
+        <!-- ubah path sesuai file lo -->
+        <img src="image.png" alt="Logo Prof Ahsan" class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover border-2 border-[var(--brand-blue)]">
+        <div class="flex flex-col leading-tight">
+          <span class="text-lg md:text-xl font-bold text-[var(--brand-blue)]">Prof. Ahsan</span>
+          <span class="text-xs md:text-sm text-gray-500">Guru Besar Psikologi UGM</span>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-6 text-gray-700" role="navigation" aria-label="Main navigation">
-        <a class="nav-link" href="#tentang">Tentang</a>
-        <a class="nav-link" href="#services">Layanan</a>
-        <a class="nav-link" href="#projects">Proyek</a>
-        <a class="nav-link" href="#prestasi">Prestasi</a>
-        <a class="nav-link btn-cta" href="#kontak">Kontak</a>
+      <!-- RIGHT: nav (desktop) -->
+      <nav class="hidden md:flex items-center gap-6 text-gray-700 font-medium">
+        <a href="#tentang" class="hover:text-[var(--brand-blue)]">Tentang</a>
+        <a href="#pendidikan" class="hover:text-[var(--brand-blue)]">Pendidikan</a>
+        <a href="#pengalaman" class="hover:text-[var(--brand-blue)]">Pengalaman</a>
+        <a href="#prestasi" class="hover:text-[var(--brand-blue)]">Prestasi</a>
+        <a href="#kontak" class="hover:text-[var(--brand-blue)]">Kontak</a>
       </nav>
 
-      <!-- mobile menu button -->
-      <button id="navToggle" class="md:hidden p-2 rounded focus-ring" aria-expanded="false" aria-controls="mobileMenu" aria-label="Buka menu">
-        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path></svg>
+      <!-- MOBILE: tombol burger -->
+      <button id="navToggle" class="md:hidden p-2 rounded hover:bg-gray-100" aria-label="Buka menu">
+        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
+        </svg>
       </button>
     </div>
 
-    <!-- mobile collapsible -->
+    <!-- MOBILE: menu collapsible -->
     <div id="mobileMenu" class="md:hidden hidden bg-white border-t">
-      <div class="max-w-[var(--container)] mx-auto p-4 flex flex-col gap-2">
-        <a href="#tentang" class="p-3 rounded hover:bg-gray-50">Tentang</a>
-        <a href="#services" class="p-3 rounded hover:bg-gray-50">Layanan</a>
-        <a href="#projects" class="p-3 rounded hover:bg-gray-50">Proyek</a>
-        <a href="#prestasi" class="p-3 rounded hover:bg-gray-50">Prestasi</a>
-        <a href="#kontak" class="p-3 rounded hover:bg-gray-50">Kontak</a>
+      <div class="container mx-auto p-3 flex flex-col gap-2">
+        <a href="#tentang" class="p-2 rounded hover:bg-gray-50">Tentang</a>
+        <a href="#pendidikan" class="p-2 rounded hover:bg-gray-50">Pendidikan</a>
+        <a href="#pengalaman" class="p-2 rounded hover:bg-gray-50">Pengalaman</a>
+        <a href="#prestasi" class="p-2 rounded hover:bg-gray-50">Prestasi</a>
+        <a href="#kontak" class="p-2 rounded hover:bg-gray-50">Kontak</a>
       </div>
     </div>
+
+    <!-- garis tipis warna di bawah header -->
+    <div class="w-full h-1" style="background: linear-gradient(90deg, var(--brand-blue) 0%, var(--bg-gradient-end) 100%);"></div>
   </header>
 
-  <!-- HERO: clear value prop + 3-second CTAs -->
-  <main id="top">
-    <section class="text-white py-12" style="background: linear-gradient(90deg, #0b3d91 0%, #47b71e 100%);">
-      <div class="max-w-[var(--container)] mx-auto text-center px-4">
-        <div class="flex flex-col items-center">
-          <div class="w-40 h-40 mx-auto rounded-full border-4 border-white overflow-hidden mb-6 hero-float" aria-hidden="true">
-            <picture>
-              <source srcset="/assets/profile-800.webp 800w, /assets/profile-400.webp 400w" type="image/webp">
-              <img id="profileImg" src="/assets/profile-400.jpg" alt="Foto Prof Ahsan Habiburrahman" class="w-full h-full object-cover" loading="eager">
-            </picture>
-          </div>
+  <!-- HERO -->
+  <section class="text-white py-16" style="background: linear-gradient(90deg, var(--brand-blue) 0%, var(--bg-gradient-end) 100%);">
+    <div class="container mx-auto text-center">
 
-          <h1 class="text-3xl md:text-4xl font-extrabold" style="font-family:Merriweather,serif;">Prof. H. Ahsan Habiburrahman</h1>
-          <p class="mt-2 text-lg md:text-xl font-medium opacity-95" id="roleTyped" aria-live="polite">Professor of Psychology — Speaker & Education Consultant</p>
-
-          <p class="max-w-2xl mx-auto mt-4 text-gray-100">Dosen Fakultas Psikologi UGM. Fokus pada pengembangan kepemimpinan, pendidikan karakter, dan riset aplikatif. Tersedia untuk menjadi pembicara, konsultan pendidikan, dan kolaborasi penelitian.</p>
-
-          <div class="mt-6 flex flex-wrap gap-3 justify-center">
-            <a href="/assets/CV-AhsanHabiburrahman.pdf" download class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-white text-brand-blue font-semibold shadow cta">📄 Download CV</a>
-            <a href="#kontak" class="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-white text-white font-semibold bg-opacity-10 hover:bg-opacity-20">📅 Book Speaker</a>
-          </div>
-
-        </div>
+      <!-- profile image with float -->
+      <div class="w-40 h-40 mx-auto rounded-full border-4 border-white overflow-hidden mb-6 hero-float" data-aos="zoom-in">
+        <img id="profileImg" src="fotoahsan.jpg" alt="Foto Prof Ahsan" class="w-full h-full object-cover">
       </div>
-    </section>
 
-    <!-- QUICK SERVICES (scannable) -->
-    <section id="services" class="py-10">
-      <div class="max-w-[var(--container)] mx-auto px-4">
-        <div class="grid md:grid-cols-3 gap-6">
-          <article class="bg-white p-6 rounded-lg shadow-sm card">
-            <h3 class="text-lg font-semibold">Pembicara / Moderator</h3>
-            <p class="mt-2 text-sm text-gray-700">Materi: leadership, pendidikan karakter, psikologi pendidikan. Pengalaman: >100 event nasional.</p>
-          </article>
-          <article class="bg-white p-6 rounded-lg shadow-sm card">
-            <h3 class="text-lg font-semibold">Konsultasi Pendidikan</h3>
-            <p class="mt-2 text-sm text-gray-700">Design program, evaluasi, dan pelatihan guru / kepala sekolah.</p>
-          </article>
-          <article class="bg-white p-6 rounded-lg shadow-sm card">
-            <h3 class="text-lg font-semibold">Riset & Publikasi</h3>
-            <p class="mt-2 text-sm text-gray-700">Kolaborasi penelitian; publikasi ilmiah; pengembangan kurikulum berbasis bukti.</p>
-          </article>
-        </div>
+      <h2 class="text-3xl font-bold" data-aos="fade-up" data-aos-delay="100">Prof. H. Ahsan Habiburrahman, S.Psi., Ph.d.</h2>
+
+      <!-- typed.js target -->
+      <p class="mt-2 text-lg" data-aos="fade-up" data-aos-delay="200">
+        <span id="typed-role"></span>
+      </p>
+
+      <p class="max-w-2xl mx-auto mt-4 text-gray-200" data-aos="fade-up" data-aos-delay="300">Mengajar di Fakultas Psikologi Universitas Gadjah Mada yang telah lama berkecimpung di dunia akademik dan pengembangan ilmu. Saat ini saya mengemban amanah sebagai Ketua Umum PP Muhammadiyah, dengan fokus memperkuat peran organisasi dalam pendidikan dan pemberdayaan masyarakat. Sejak masa kuliah, saya aktif menulis dan mengembangkan gagasan di bidang psikologi, pendidikan, dan kemasyarakatan.</p>
+
+      <div class="mt-6" data-aos="zoom-in" data-aos-delay="400">
+        <a href="assets/CV-AhsanHabiburrahman.pdf" download="CV-AhsanHabiburrahman.pdf" class="inline-block px-6 py-3 rounded-lg text-[var(--brand-blue)] bg-white font-semibold cta pulse">📄 Download CV</a>
       </div>
-    </section>
 
-    <!-- TENTANG (short + download resume CTA) -->
-    <section id="tentang" class="py-12 bg-gray-50">
-      <div class="max-w-[var(--container)] mx-auto px-4">
-        <div class="grid md:grid-cols-2 gap-8 items-start">
-          <div>
-            <h2 class="text-2xl font-bold text-brand-blue">Profil Singkat</h2>
-            <p class="mt-3 text-gray-700">Prof. Ahsan memiliki pengalaman panjang di dunia akademik dan organisasi. Jika ingin detail CV akademik, silakan unduh CV atau hubungi langsung.</p>
-            <ul class="mt-4 text-gray-700 list-disc pl-5">
-              <li>Dosen Fakultas Psikologi, UGM</li>
-              <li>Ketua Umum PP Muhammadiyah</li>
-              <li>Fokus: kepemimpinan, pendidikan, dan riset aplikatif</li>
-            </ul>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-sm hero-card">
-            <h3 class="font-semibold">Data Ringkas</h3>
-            <dl class="mt-3 text-gray-700">
-              <dt class="font-medium">Nama</dt>
-              <dd>Ahsan Habiburrahman</dd>
-              <dt class="font-medium mt-2">TTL</dt>
-              <dd>Bantul, 28 April 1963</dd>
-              <dt class="font-medium mt-2">Alamat</dt>
-              <dd>Yogyakarta — detail tersedia di CV</dd>
-            </dl>
-          </div>
-        </div>
+      <!-- optional Lottie illustration (comment out if not using) -->
+      <div id="lottieHero" class="mx-auto mt-8" style="width:220px;height:220px;" aria-hidden="true"></div>
+
+    </div>
+  </section>
+
+  <!-- TENTANG -->
+  <section id="tentang" class="py-12 container mx-auto px-4" data-aos="fade-up">
+    <h3 class="text-2xl font-bold text-[var(--brand-blue)] mb-4">Profil Diri</h3>
+    <ul class="space-y-2 text-gray-700">
+      <li><b>Nama:</b> Ahsan Habiburrahman</li>
+      <li><b>TTL:</b> Bantul, 28 April 1963</li>
+      <li><b>Alamat:</b> Gg. Menur No.679, Warungboto, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55164</li>
+    </ul>
+  </section>
+
+  <!-- PENDIDIKAN -->
+  <section id="pendidikan" class="bg-gray-50 py-12" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+      <h3 class="text-2xl font-bold text-[var(--brand-blue)] mb-4">Pendidikan</h3>
+      <div class="bg-white p-6 rounded-lg shadow-sm card" data-aos="fade-right">
+        <h4 class="font-semibold">Harvard University</h4>
+        <p>Psychology — Lulusan Terbaik</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- PROJECTS / CASE STUDY TEMPLATES -->
-    <section id="projects" class="py-12">
-      <div class="max-w-[var(--container)] mx-auto px-4">
-        <h2 class="text-2xl font-bold text-brand-blue">Proyek & Studi Kasus</h2>
-        <p class="mt-2 text-gray-700">Contoh studi kasus yang singkat: problem & hasil. (Isi dengan kasus nyata; sertakan bukti hasil jika ada).</p>
-
-        <div class="mt-6 grid md:grid-cols-2 gap-6">
-          <article class="bg-white p-6 rounded-lg shadow-sm card">
-            <h3 class="font-semibold">Studi Kasus — Program Pendidikan Karakter</h3>
-            <p class="mt-2 text-sm text-gray-700">Challenge: rendahnya partisipasi siswa. Action: pelatihan guru + intervensi kurikulum. Result: peningkatan partisipasi & nilai sosial-emotional (contoh angka di sini).</p>
-            <a class="mt-4 inline-block text-brand-blue font-medium" href="#">Lihat detail</a>
-          </article>
-
-          <article class="bg-white p-6 rounded-lg shadow-sm card">
-            <h3 class="font-semibold">Studi Kasus — Workshop Kepemimpinan</h3>
-            <p class="mt-2 text-sm text-gray-700">Challenge: kepemimpinan sekolah kurang terstruktur. Action: workshop & mentoring. Result: kepala sekolah melaporkan perbaikan manajemen.</p>
-            <a class="mt-4 inline-block text-brand-blue font-medium" href="#">Lihat detail</a>
-          </article>
-        </div>
+  <!-- PENGALAMAN -->
+  <section id="pengalaman" class="py-12 container mx-auto px-4">
+    <h3 class="text-2xl font-bold text-[var(--brand-blue)] mb-4" data-aos="fade-up">Pengalaman</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white p-6 rounded-lg shadow-sm card" data-aos="zoom-in" data-aos-delay="100">
+        <h4 class="font-semibold">Organisasi</h4>
+        <p>Ketua PP Muhammadiyah</p>
       </div>
-    </section>
-
-    <!-- PRESTASI (HAPUS klaim yang tidak terverifikasi) -->
-    <section id="prestasi" class="py-12 bg-gray-50">
-      <div class="max-w-[var(--container)] mx-auto px-4">
-        <h2 class="text-2xl font-bold text-brand-blue">Prestasi & Penghargaan</h2>
-        <p class="mt-2 text-gray-700">Catatan: hanya tampilkan penghargaan yang dapat diverifikasi. Jika belum ada bukti digital, lampirkan di folder /assets/evidence dan tautkan di sini.</p>
-        <ul class="mt-4 list-disc pl-5 text-gray-700">
-          <li>Bintang Mahaputera Utama — <em>sertakan bukti</em></li>
-          <li>Bintang Legiun Veteran Republik Indonesia — <em>sertakan bukti</em></li>
-          <!-- Jika ada claim luar biasa (misal Nobel) HAPUS atau ganti jadi 'Nominated' dan tambahkan bukti -->
-        </ul>
+      <div class="bg-white p-6 rounded-lg shadow-sm card" data-aos="zoom-in" data-aos-delay="200">
+        <h4 class="font-semibold">Pekerjaan</h4>
+        <p>Dosen, Fakultas Psikologi UGM</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CONTACT: formspree untuk menghindari expose email -->
-    <section id="kontak" class="py-12">
-      <div class="max-w-[var(--container)] mx-auto px-4">
-        <h2 class="text-2xl font-bold text-brand-blue">Kontak</h2>
-        <p class="mt-2 text-gray-700">Gunakan form ini agar email tidak ter-expose untuk spam. Atau hubungi via WhatsApp (link).</p>
+  <!-- PRESTASI -->
+  <section id="prestasi" class="bg-gray-50 py-12" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+      <h3 class="text-2xl font-bold text-[var(--brand-blue)] mb-4">Prestasi & Penghargaan</h3>
+      <ul class="list-disc pl-6 text-gray-700">
+        <li data-aos="fade-left">Nobel Award</li>
+        <li data-aos="fade-left" data-aos-delay="100">Bintang Legiun Veteran Republik Indonesia</li>
+        <li data-aos="fade-left" data-aos-delay="200">Bintang Mahaputera Utama</li>
+      </ul>
+    </div>
+  </section>
 
-        <div class="mt-4 grid md:grid-cols-2 gap-6">
-          <form action="https://formspree.io/f/yourformid" method="POST" class="bg-white p-6 rounded-lg shadow-sm">
-            <label class="block text-sm font-medium text-gray-700">Nama<input name="name" required class="mt-1 block w-full rounded border-gray-200 p-2 focus:ring focus:ring-brand-blue"></label>
-            <label class="block text-sm font-medium text-gray-700 mt-3">Email<input type="email" name="email" required class="mt-1 block w-full rounded border-gray-200 p-2 focus:ring focus:ring-brand-blue"></label>
-            <label class="block text-sm font-medium text-gray-700 mt-3">Pesan<textarea name="message" rows="4" required class="mt-1 block w-full rounded border-gray-200 p-2 focus:ring focus:ring-brand-blue"></textarea></label>
-            <button type="submit" class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded bg-brand-blue text-white font-medium">Kirim Pesan</button>
-          </form>
-
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <h3 class="font-semibold">Alternatif Kontak</h3>
-            <p class="mt-3 text-gray-700">WhatsApp (klik untuk buka):</p>
-            <a href="https://wa.me/6281327179180" class="inline-block mt-2 px-4 py-2 bg-gray-100 rounded">+62 813-2717-9180</a>
-            <p class="mt-4 text-gray-700">Email: (disembunyikan) — gunakan form untuk menghubungi.</p>
-            <p class="mt-4 text-gray-700">Instagram: <a href="https://www.instagram.com/ahsaaans/" target="_blank" rel="noopener noreferrer" class="text-brand-blue">@ahsaaans</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
+  <!-- KONTAK -->
+  <section id="kontak" class="py-12 container mx-auto px-4" data-aos="fade-up">
+    <h3 class="text-2xl font-bold text-[var(--brand-blue)] mb-4">Kontak</h3>
+    <p class="text-gray-700 mb-4">Klik untuk membuka aplikasi yang sesuai:</p>
+    <div class="flex flex-col md:flex-row gap-4">
+      <a href="mailto:ahsanhabib.rahman100@gmail.com" class="inline-block p-4 bg-white shadow rounded-lg">Email: ahsanhabib.rahman100@gmail.com</a>
+      <a href="https://wa.me/6281327179180" class="inline-block p-4 bg-white shadow rounded-lg">WhatsApp: +62 813-2717-9180</a>
+      <a href="https://www.instagram.com/ahsaaans/" target="_blank" rel="noopener" class="inline-block p-4 bg-white shadow rounded-lg">Instagram: @ahsaaans</a>
+    </div>
+  </section>
 
   <!-- FOOTER -->
-  <footer class="bg-brand-blue text-white py-6">
-    <div class="max-w-[var(--container)] mx-auto text-center px-4">
-      <p>© Prof. H. Ahsan Habiburrahman — Semua hak cipta dilindungi.</p>
-      <p class="text-xs mt-2 opacity-80">Website ini adalah contoh portofolio — pastikan semua klaim & bukti terverifikasi sebelum publikasi.</p>
+  <footer class="bg-[var(--brand-blue)] text-white py-6">
+    <div class="container mx-auto text-center">
+      <p>© "Prof. H. Ahsan Habiburrahman" — Semua hak cipta dilindungi.</p>
     </div>
   </footer>
 
-  <!-- Scripts (deferred) -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
-  <script defer>
-    document.addEventListener('DOMContentLoaded', function(){
-      // AOS init
-      if(window.AOS) AOS.init({ duration: 700, offset: 100, once: true });
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // init AOS
+    if(window.AOS) AOS.init({ duration: 700, offset: 100, once: true });
 
-      // Typed fallback: if typed.js loaded
-      if(window.Typed) {
-        new Typed('#roleTyped', { strings: ['Professor of Psychology','Speaker • Consultant • Researcher'], typeSpeed:40, backSpeed:30, backDelay:1500, loop:true });
+    // Typed.js init
+    if(window.Typed) {
+      const typed = new Typed('#typed-role', {
+        strings: ['Guru Besar Psikologi UGM', 'Ketua Umum PP Muhammadiyah'],
+        typeSpeed: 45,
+        backSpeed: 30,
+        backDelay: 1800,
+        loop: true
+      });
+    }
+
+    // Lottie (only load if json exists at assets/hero.json)
+    try {
+      if(window.lottie) {
+        lottie.loadAnimation({
+          container: document.getElementById('lottieHero'),
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          path: 'assets/hero.json'
+        });
       }
+    } catch(e) { /* ignore if not present */ }
 
-      // Mobile nav toggle
-      const toggle = document.getElementById('navToggle');
-      const mobileMenu = document.getElementById('mobileMenu');
-      toggle?.addEventListener('click', ()=>{
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!expanded));
-        mobileMenu.classList.toggle('hidden');
-      });
-
-      // Active nav on scroll (simple)
-      const sections = document.querySelectorAll('main section[id]');
-      const navLinks = document.querySelectorAll('nav .nav-link');
-      const obs = new IntersectionObserver((entries)=>{
-        entries.forEach(entry=>{
-          const id = entry.target.getAttribute('id');
-          if(entry.isIntersecting){
-            navLinks.forEach(a=> a.classList.toggle('text-brand-blue', a.getAttribute('href') === '#'+id));
-          }
+    // IntersectionObserver fallback for elements with class .reveal
+    const reveals = document.querySelectorAll('.reveal');
+    if(reveals.length) {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if(e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); }
         });
-      }, { threshold: 0.28 });
-      sections.forEach(s=> obs.observe(s));
+      }, { threshold: 0.12 });
+      reveals.forEach(r => obs.observe(r));
+    }
 
-      // Smooth scroll for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(a=>{
-        a.addEventListener('click', function(e){
-          const href = this.getAttribute('href');
-          if(href.startsWith('#')){
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
-          }
-        });
-      });
+    // NAV TOGGLE (mobile)
+    const toggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    toggle?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
     });
+
+    // image preview helper (uncomment input in HTML to use)
+    // document.getElementById('fileInput')?.addEventListener('change', e => {
+    //   const f = e.target.files[0];
+    //   if(!f) return; document.getElementById('profileImg').src = URL.createObjectURL(f);
+    // });
   </script>
 </body>
 </html>
